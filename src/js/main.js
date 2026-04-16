@@ -1,8 +1,4 @@
-// Import header & footer loader
-import { loadHeaderFooter } from './utils.js';
 
-// Load header and footer
-loadHeaderFooter();
 
 // Load categories from API (second endpoint)
 loadCategories();
