@@ -4,15 +4,17 @@ export async function loadHeaderFooter() {
 
   try {
     if (header) {
-      const res = await fetch('./partials/header.html');
+      const res = await fetch('/partials/header.html'); 
       const data = await res.text();
       header.innerHTML = data;
     }
 
     if (footer) {
-      const res = await fetch('./partials/footer.html');
+       console.log("FOOTER ELEMENT:", footer); 
+      const res = await fetch('/partials/footer.html'); 
       const data = await res.text();
       footer.innerHTML = data;
+
     }
 
   } catch (err) {
