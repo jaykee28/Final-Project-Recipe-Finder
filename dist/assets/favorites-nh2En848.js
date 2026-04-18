@@ -1,5 +1,0 @@
-import"./styles-BR52kq77.js";async function i(){const t=document.querySelector("header"),e=document.querySelector("footer");try{if(t){const r=await(await fetch("/partials/header.html")).text();t.innerHTML=r}if(e){console.log("FOOTER ELEMENT:",e);const r=await(await fetch("/partials/footer.html")).text();e.innerHTML=r}}catch(o){console.error("Error loading header/footer:",o)}}i();const a=document.getElementById("favorites");let n=JSON.parse(localStorage.getItem("favorites"))||[];n.length===0?a.innerHTML="<p>No favorites yet 😔</p>":n.forEach(t=>{const e=document.createElement("div");e.classList.add("favorite-card"),e.innerHTML=`
-      <img src="${t.image}" alt="${t.name}" />
-      <h3>${t.name}</h3>
-      <button class="remove-btn" data-id="${t.idMeal}">❌ Remove</button>
-    `,e.querySelector(".remove-btn").addEventListener("click",o=>{o.stopPropagation(),s(t.idMeal),e.remove()}),a.appendChild(e)});function s(t){let e=JSON.parse(localStorage.getItem("favorites"))||[];e=e.filter(o=>o.idMeal!==t),localStorage.setItem("favorites",JSON.stringify(e))}
